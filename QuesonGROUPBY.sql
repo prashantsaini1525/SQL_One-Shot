@@ -1,0 +1,34 @@
+CREATE DATABASE payment_method;
+USE payment_method;
+
+CREATE TABLE payment (
+customer_id INT PRIMARY KEY,
+customer_name VARCHAR(50),
+mode_name VARCHAR(50),
+city VARCHAR(50)
+);
+
+INSERT INTO payment
+(customer_id, customer_name, mode_name, city)
+VALUES
+(101, "OLIVIA BERRETT", "NET BANKING", "PORTLAND"),
+(102, "ETHAN SINCLAIR", "CREDIT CARD", "MIAMI"),
+(103, "MAYA HERNANDEZ", "CREDIT CARD", "SEATTLE"),
+(104, "LIAM DONOVAN", "NET BANKING", "DENVER"),
+(105, "SOPHIA NGUYEN", "CREDIT CARD", "NEW ORLEANS"),
+(106, "CALEV FOSTER", "DEBIT CARD", "MINNEAPOLIS"),
+(107, "AVA PATEL", "DEBIT CARD", "PHOENIX"),
+(108, "LUCAS CARTER", "NET BANKING", "BOSTAN"),
+(109, "ISABELLA MARTINEZ", "NET BANKING", "NASHVILLE"),
+(110, "JACKSON BROCKS", "CREDIT CARD", "BOSTON");
+
+SELECT mode_name, COUNT(mode_name)
+FROM payment
+GROUP BY mode_name;
+
+SELECT mode_name, COUNT(mode_name)
+FROM payment
+GROUP BY mode_name
+ORDER BY mode_name;
+
+SELECT * FROM payment;
